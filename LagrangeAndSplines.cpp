@@ -86,25 +86,25 @@ int main()
         y_arr[i] = function(x_arr[i]);
     }
 
-    cout << "Iíòåðïîëÿöiÿ" << endl;
-    cout << "Iíòåðïîëÿöiéíèé ïîëiíîì Ëàãðàíæà(ïðÿìèé) ìàº êîåôiöiåíòè:" << endl;
+    cout << "IÃ­Ã²Ã¥Ã°Ã¯Ã®Ã«Ã¿Ã¶iÃ¿" << endl;
+    cout << "IÃ­Ã²Ã¥Ã°Ã¯Ã®Ã«Ã¿Ã¶iÃ©Ã­Ã¨Ã© Ã¯Ã®Ã«iÃ­Ã®Ã¬ Ã‹Ã Ã£Ã°Ã Ã­Ã¦Ã (Ã¯Ã°Ã¿Ã¬Ã¨Ã©) Ã¬Ã Âº ÃªÃ®Ã¥Ã´iÃ¶iÃ¥Ã­Ã²Ã¨:" << endl;
     for (int i = 0; i < 10; i++) {
         cout << XLagrange(y_arr[i], N, x_arr, y_arr) << "  ";
     }
     cout << endl;
-    cout << "Iíòåðïîëÿöiéíèé ïîëiíîì Ëàãðàíæà(îáåðíåíèé) ìàº êîåôiöiåíòè:" << endl;
+    cout << "IÃ­Ã²Ã¥Ã°Ã¯Ã®Ã«Ã¿Ã¶iÃ©Ã­Ã¨Ã© Ã¯Ã®Ã«iÃ­Ã®Ã¬ Ã‹Ã Ã£Ã°Ã Ã­Ã¦Ã (Ã®Ã¡Ã¥Ã°Ã­Ã¥Ã­Ã¨Ã©) Ã¬Ã Âº ÃªÃ®Ã¥Ã´iÃ¶iÃ¥Ã­Ã²Ã¨:" << endl;
     for (int i = 0; i < 10; i++) {
         cout << YLagrange(x_arr[i], N, x_arr, y_arr) << "  ";
     }
    
     float a1[N], a2[N], a3[N], a4[N];
     SplCreator(x_arr, y_arr, a1, a2, a3, a4);
-    cout << "Cïëàéíè:" << endl;
+    cout << "CÃ¯Ã«Ã Ã©Ã­Ã¨:" << endl;
 
     for (int i = 0; i < N; i++)
     { 
 
-        cout << "Ñïëàéí " << i + 1 << endl;
+        cout << "Ã‘Ã¯Ã«Ã Ã©Ã­ " << i + 1 << endl;
         cout << "a1 = " << setprecision(10) << a1[i] << "   a2 = " << setprecision(10) << a2[i] << "   a3 = " << setprecision(10) << a3[i] << "   a4 = " << setprecision(10)<< a4[i] << endl;
     }
 

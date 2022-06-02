@@ -19,25 +19,25 @@ float MaxVector(float a[4])
 int main()
 {
     setlocale(LC_ALL, "ukr");
-    // змінні
+    // Г§Г¬ВіГ­Г­Ві
     float A[4][4] = { {4,1,0,2} ,{1,3,0,0} ,{0,0,2,1} ,{2,0,1,4}, };
     float b[4] = {14,7,10,21};
     float x1[4];
     float x2[4];
-    float eps=0.01;//точність
-    float error[4];//тут перевіряємо точність
+    float eps=0.01;//ГІГ®Г·Г­ВіГ±ГІГј
+    float error[4];//ГІГіГІ ГЇГҐГ°ГҐГўВіГ°ГїВєГ¬Г® ГІГ®Г·Г­ВіГ±ГІГј
 
     for (int i = 0; i < 4; i++)
     {
         if (A[i][i] < A[i][0] + A[i][1] + A[i][2] + A[i][3] - A[i][i])
-            cout << "Матриця некоректна" << endl;
+            cout << "ГЊГ ГІГ°ГЁГ¶Гї Г­ГҐГЄГ®Г°ГҐГЄГІГ­Г " << endl;
     }
-    //початкове наближення х0(0.0.0.0)
+    //ГЇГ®Г·Г ГІГЄГ®ГўГҐ Г­Г ГЎГ«ГЁГ¦ГҐГ­Г­Гї Гµ0(0.0.0.0)
     for (int i = 0; i < 4; i++)
     {
         x1[i] = 0;
     }
-    int iter = 1;//к-сть ітерацій
+    int iter = 1;//ГЄ-Г±ГІГј ВіГІГҐГ°Г Г¶ВіГ©
     do {
         x2[0] = (-A[0][1] * x1[1] - A[0][2] * x1[2] - A[0][3] * x1[3]+b[0]) / A[0][0];
         x2[1] = (-A[1][0] * x2[0] - A[1][2] * x1[2] - A[1][3] * x1[3]+b[1]) / A[1][1];
@@ -49,14 +49,14 @@ int main()
         error[2] = abs(x1[2] - x2[2]);
         error[3] = abs(x1[3] - x2[3]);
 
-        if (iter == 1) cout << "Норма векторiв на iтерацiї 1: " << setprecision(10) << MaxVector(error) << endl;
+        if (iter == 1) cout << "РќРѕСЂРјР° РІРµРєС‚РѕСЂС–РІ РЅР° С–С‚РµСЂР°С†С–С— 1: " << setprecision(10) << MaxVector(error) << endl;
         iter++;
         x1[0] = x2[0];
         x1[1] = x2[1];
         x1[2] = x2[2];
         x1[3] = x2[3];
 
-        cout << "Iтерацiя " << iter << endl;
+        cout << "IГІГҐГ°Г Г¶iГї " << iter << endl;
         cout << "x[1] = " << setprecision(10) << x1[0] << endl;
         cout << "x[2] = " << setprecision(10) << x1[1] << endl;
         cout << "x[3] = " << setprecision(10) << x1[2] << endl;
@@ -65,7 +65,7 @@ int main()
     
     } while (MaxVector(error) > eps);
 
-    cout << "Норма векторiв на останнiй iтерацiї: " << MaxVector(error) << endl;
+    cout << "РќРѕСЂРјР° РІРµРєС‚РѕСЂС–РІ РЅР° РѕСЃС‚Р°РЅРЅС–Р№ С–С‚РµСЂР°С†С–С—: " << MaxVector(error) << endl;
     cout << "x[1] = " << setprecision(10) << x1[0]<<endl;
     cout << "x[2] = " << setprecision(10) << x1[1] << endl;
     cout << "x[3] = " << setprecision(10) << x1[2] << endl;
